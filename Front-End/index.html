@@ -4,21 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport">
     <title>FireWood Management System</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" rel="stylesheet">
+
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+            rel="stylesheet"
+    />
+
     <link href="assets/icons/font/css/all.min.css" rel="stylesheet">
     <!--- google font link-->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
-          rel="stylesheet">
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="./styles/style.css" rel="stylesheet">
 </head>
-<body>
+<body id="home">
+<h1 class="text-white text-center mt-5 mb-5">Fire Wood Management</h1>
+<section>
+    <div id="login_page" class="container shadow  w-25  ps-3  pe-3  rounded-5" style="padding: 5px">
+
+        <!-- Pills navs -->
+        <ul class="nav nav-pills nav-justified mt-5 mb-3 " id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a aria-controls="pills-login" aria-selected="true" class="nav-link active" data-mdb-toggle="pill" href="#pills-login"
+                   id="tab-login" role="tab">Login</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a aria-controls="pills-register" aria-selected="false" class="nav-link" data-mdb-toggle="pill" href="#pills-register"
+                   id="tab-register" role="tab">Register</a>
+            </li>
+        </ul>
+        <!-- Pills navs -->
+
+        <!-- Pills content -->
+        <div class="tab-content">
+            <div aria-labelledby="tab-login" class="tab-pane fade show active" id="pills-login" role="tabpanel">
+                <form>
+                    <div class="text-center mb-3">
+                        <p class="text-white">Sign in with:</p>
+                        <button class="btn btn-link btn-floating mx-1" type="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+
+                        <button class="btn btn-link btn-floating mx-1" type="button">
+                            <i class="fab fa-google"></i>
+                        </button>
+
+                        <button class="btn btn-link btn-floating mx-1" type="button">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+
+                        <button class="btn btn-link btn-floating mx-1" type="button">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+
+                    <p class="text-white text-center">or:</p>
+
+                    <!-- Email input -->
+                    <div class="form-outline  mb-4">
+                        <input class="form-control text-white " id="loginName" type="text"/>
+                        <label class="form-label text-info" for="loginName">Email or username</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input class="form-control text-white " id="loginPassword" type="password"  style="border-color: red!important;"/>
+                        <label class="form-label text-info" for="loginPassword">Password</label>
+                    </div>
+
+                    <!-- 2 column grid layout -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-3 mb-md-0">
+                                <input checked class="form-check-input" id="loginCheck" type="checkbox" value=""/>
+                                <label class="form-check-label text-white" for="loginCheck"> Remember me </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Simple link -->
+                            <a href="#!">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button class="btn btn-primary btn-block mb-4" type="submit">Sign in</button>
+
+                    <!-- Register buttons -->
+                    <div class="text-center">
+                        <p class="text-white">Not a member? <a href="#!">Register</a></p>
+                    </div>
+                </form>
+            </div>
+            <div aria-labelledby="tab-register" class="tab-pane fade" id="pills-register" role="tabpanel">
+                <form>
+
+                    <!-- Name input -->
+                    <div class="form-outline mb-4">
+                        <input class="form-control text-white" id="registerName" type="text"/>
+                        <label class="form-label text-info" for="registerName">Name</label>
+                    </div>
+
+                    <!-- Username input -->
+                    <div class="form-outline mb-4">
+                        <input class="form-control text-white" id="registerUsername" type="text"/>
+                        <label class="form-label text-info" for="registerUsername">Username</label>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input class="form-control text-white" id="registerEmail" type="email"/>
+                        <label class="form-label text-info" for="registerEmail">Email</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input class="form-control text-white" id="registerPassword" type="password"/>
+                        <label class="form-label text-info" for="registerPassword">Password</label>
+                    </div>
+
+                    <!-- Repeat Password input -->
+                    <div class="form-outline mb-4">
+                        <input class="form-control text-white" id="registerRepeatPassword" type="password"/>
+                        <label class="form-label  text-info" for="registerRepeatPassword">Repeat password</label>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                        <input aria-describedby="registerCheckHelpText" checked class="form-check-input me-2" id="registerCheck" type="checkbox"
+                               value=""/>
+                        <label class="form-check-label text-white" for="registerCheck">
+                            I have read and agree to the terms
+                        </label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button class="btn btn-primary btn-block mb-3" type="button">Sign in</button>
+                </form>
+            </div>
+        </div>
+        <!-- Pills content -->
+
+    </div>
+
+</section>
+
 
 <!--Import Bootstrap cdn links-->
 <script crossorigin="anonymous"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- MDB -->
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+        type="text/javascript"
+></script>
 
 <!--Import js for jQuery-->
 <script src="./assets/jquery/jquery-3.6.1.min.js"></script>
