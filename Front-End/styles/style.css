@@ -11,8 +11,51 @@
     background-repeat: no-repeat;
 }
 
+#home_page{
+    height: 90vh;
+}
+
 #login_page{
-    border: 1px solid #ffffff;
+
     background: rgba(255, 255, 255, 0.09);
 }
 
+
+#nav_bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    z-index: 10;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #636e72, #000000);
+}
+
+.navbar-brand img {
+    height: 40px;
+    padding-left: 20px;
+}
+
+.navbar-nav li {
+    padding: 0 20px;
+}
+
+.navbar-nav li a {
+    color: #fff !important;
+    font-weight: 600;
+    float: right;
+    text-align: left;
+}
+
+.fa-bars {
+    color: #fff;
+    font-size: 30px !important;
+}
+
+.navbar-toggler {
+}
