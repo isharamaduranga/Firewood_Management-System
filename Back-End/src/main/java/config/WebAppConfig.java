@@ -17,4 +17,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan(basePackages = "controller")
 public class WebAppConfig {
 
+    public WebAppConfig() {
+        System.out.println("Running web app config ...");
+    }
 }

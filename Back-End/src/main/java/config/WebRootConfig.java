@@ -19,6 +19,10 @@ import org.springframework.context.annotation.Import;
 @ComponentScan(basePackages = "service")
 public class WebRootConfig {
 
+    public WebRootConfig() {
+        System.out.println("Running web root config");
+    }
+
     @Bean
     public ModelMapper modelMapper(){
         return new ModelMapper();

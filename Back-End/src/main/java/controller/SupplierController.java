@@ -14,4 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/supplier")
 public class SupplierController {
+
+    public SupplierController() {
+        System.out.println("Running supplier controller class...");
+    }
 }
