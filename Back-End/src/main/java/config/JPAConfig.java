@@ -43,6 +43,8 @@ public class JPAConfig {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/firewood?createDatabaseIfNotExist=true");
+
+        /** custom edit*/
         ds.setUsername("root");
         ds.setPassword("1234");
         return ds;
@@ -51,7 +53,7 @@ public class JPAConfig {
     @Bean
     public JpaVendorAdapter jpaVendorAdapter(){
         HibernateJpaVendorAdapter va = new HibernateJpaVendorAdapter();
-        va.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
+        va.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");/** custom edit*/
         va.setDatabase(Database.MYSQL);
         va.setGenerateDdl(true);
         va.setShowSql(true);

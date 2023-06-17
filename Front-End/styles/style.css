@@ -17,7 +17,7 @@
 
 #login_page{
  border: 1px solid rgba(255, 255, 255, 0.7);
-    background: rgba(255, 255, 255, 0.09);
+    background: rgb(255, 255, 255);
 }
 
 
@@ -100,7 +100,7 @@
 }
 
 #v-pills-users{
-    background-image: url('../assets/images/wood_bg.jpg');
+    background-image: url('../assets/images/bg.jpg');
     height: 100vh;
     width: 83vw;
     background-size: cover; /* Adjusts the image to cover the entire background */
