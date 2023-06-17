@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import service.AdminService;
 import util.ResponseUtil;
 
+import java.util.ArrayList;
+
 @RestController
 @RequestMapping("admin")
 @CrossOrigin
@@ -26,6 +28,12 @@ public class AdminController {
     public ResponseUtil saveAdmin(@ModelAttribute AdminDTO dto){
         service.addAdmin(dto);
         return new ResponseUtil(200, dto.getId()+ " Successfully Added...",null);
+    }
+
+    @GetMapping
+    public ResponseUtil getAllAdmins(){
+        ArrayList<AdminDTO> allAdmin = service.getAllAdmins();
+        return new ResponseUtil(200,"Success..",allAdmin);
     }
 
 }

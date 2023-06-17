@@ -178,9 +178,6 @@ $("#addAdmin").click(function () {
 
 loadAllAdmins();
 
-
-
-
 // Function of Save admin
 function saveAdmins() {
 
@@ -223,6 +220,7 @@ function loadAllAdmins() {
         dataType: "json",
 
         success: function (resp) {
+            console.log(resp.data);
             for (let ad of resp.data) {
                 $("#adminTable").append("<tr><td>" + ad.id + "</td> <td>" + ad.name + "</td> <td>" + ad.password + "</td> <td>" + ad.contact + "</td></tr>");
             }
