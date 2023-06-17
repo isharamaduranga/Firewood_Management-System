@@ -22,55 +22,28 @@
 <body id="home">
 <h1 class="text-white text-center mt-5 mb-5">Fire Wood Management</h1>
 <section id="home_page">
-    <div id="login_page" class="container shadow col-md-4   ps-3  pe-3  rounded-5" style="padding: 5px">
+    <div class="container shadow col-md-3   ps-3  pe-3  rounded-5" id="login_page" style="padding: 5px">
 
         <!-- Pills navs -->
-        <ul class="nav nav-pills nav-justified mt-5 mb-3 " id="ex1" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a aria-controls="pills-login" aria-selected="true" class="nav-link active" data-mdb-toggle="pill" href="#pills-login"
-                   id="tab-login" role="tab">Login</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a aria-controls="pills-register" aria-selected="false" class="nav-link" data-mdb-toggle="pill" href="#pills-register"
-                   id="tab-register" role="tab">Register</a>
-            </li>
-        </ul>
+        <h6 class="text-center mt-5"><i class="fa-sharp fa-solid fa-circle-user fa-3x text-info"></i></h6>
+        <h2 class="text-white text-center" >~ LOGIN ~</h2>
+        <hr class="text-white mb-5">
         <!-- Pills navs -->
 
         <!-- Pills content -->
         <div class="tab-content">
             <div aria-labelledby="tab-login" class="tab-pane fade show active" id="pills-login" role="tabpanel">
                 <form>
-                    <div class="text-center mb-3">
-                        <p class="text-white">Sign in with:</p>
-                        <button class="btn btn-link btn-floating mx-1" type="button">
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
-
-                        <button class="btn btn-link btn-floating mx-1" type="button">
-                            <i class="fab fa-google"></i>
-                        </button>
-
-                        <button class="btn btn-link btn-floating mx-1" type="button">
-                            <i class="fab fa-twitter"></i>
-                        </button>
-
-                        <button class="btn btn-link btn-floating mx-1" type="button">
-                            <i class="fab fa-github"></i>
-                        </button>
-                    </div>
-
-                    <p class="text-white text-center">or:</p>
-
                     <!-- Email input -->
                     <div class="form-outline  mb-4">
                         <input class="form-control text-white " id="loginName" type="text"/>
-                        <label class="form-label text-info" for="loginName">Email or username</label>
+                        <label class="form-label text-info" for="loginName">Email or Username</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input class="form-control text-white " id="loginPassword" type="password"  style="border-color: red!important;"/>
+                        <input class="form-control text-white " id="loginPassword" style="border-color: red!important;"
+                               type="password"/>
                         <label class="form-label text-info" for="loginPassword">Password</label>
                     </div>
 
@@ -134,7 +107,8 @@
 
                     <!-- Checkbox -->
                     <div class="form-check d-flex justify-content-center mb-4">
-                        <input aria-describedby="registerCheckHelpText" checked class="form-check-input me-2" id="registerCheck" type="checkbox"
+                        <input aria-describedby="registerCheckHelpText" checked class="form-check-input me-2"
+                               id="registerCheck" type="checkbox"
                                value=""/>
                         <label class="form-check-label text-white" for="registerCheck">
                             I have read and agree to the terms
@@ -173,7 +147,6 @@
                     </li>
 
 
-
                     <div class="collapse navbar-collapse" id="carDropDown">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
@@ -182,8 +155,8 @@
                                     Suppliers Status
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#featured-car">Active Suppliers</a></li>
-                                    <li><a class="dropdown-item" id="bookBtn">Inactive Suppliers</a></li>
+                                    <li><a class="dropdown-item bg-success" href="#">Active Suppliers</a></li>
+                                    <li><a class="dropdown-item bg-danger" href="#">Inactive Suppliers</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -194,9 +167,207 @@
     </nav>
 </section>
 
-<section>
+
+<section id="dashboard">
+    <div class="d-flex align-items-start">
+        <div aria-orientation="vertical" class="nav flex-column nav-pills me-3 p-3 col-md-2 " id="v-pills-tab"
+             role="tablist">
+            <div>
+                <h5 class="text-center">Admin Profile</h5>
+                <h6 class="text-center mt-2"><i class="fa-sharp fa-solid fa-circle-user fa-5x text-secondary"></i></h6>
+
+                <small><p class="text-center">Sheron Fernando</p></small>
+            </div>
+            <hr>
+            <br>
+            <button aria-controls="v-pills-home" aria-selected="true" class="nav-link active active_tab" data-bs-target="#v-pills-home"
+                    data-bs-toggle="pill" id="v-pills-home-tab" role="tab" type="button">Home
+            </button>
+            <button aria-controls="v-pills-users" aria-selected="false" class="nav-link " data-bs-target="#v-pills-users"
+                    data-bs-toggle="pill" id="v-pills-users-tab" role="tab" type="button">Users
+            </button>
+            <button aria-controls="v-pills-suppliers" aria-selected="false" class="nav-link " data-bs-target="#v-pills-suppliers"
+                    data-bs-toggle="pill" id="v-pills-suppliers-tab" role="tab" type="button">Suppliers
+            </button>
+        </div>
+
+        <div class="tab-content" id="v-pills-tabContent">
+            <div aria-labelledby="v-pills-home-tab" class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                 tabindex="0">
+                <pre><h2 class="text-center mt-2">A D M I N  D A S H B O A R D</h2></pre>
+                <hr class="m-2">
+
+                <div class=" container-fluid d-flex flex-wrap row ">
+                    <div class="row-4 row d-flex flex-wrap mb-5  justify-content-center">
 
 
+                            <div class="col-3">
+
+                                <div class="card text-bg-warning  text-white fw-bold mb-2 mt-2 me-4 ms-4 shadow " style="max-width: 18rem;">
+                                    <div class="card-header text-center">Total Suppliers</div>
+                                    <div class="card-body">
+                                        <h2 class="card-title text-center">50</h2>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-3">
+
+                                <div class="card text-bg-success text-white fw-bold mb-2 mt-2 me-4 ms-4 shadow" style="max-width: 18rem;">
+                                    <div class="card-header text-center">Active Suppliers</div>
+                                    <div class="card-body">
+                                        <h2 class="card-title text-center">30</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+
+                                <div class="card text-bg-danger text-white fw-bold mb-2 mt-2 me-4 ms-4 shadow" style="max-width: 18rem;">
+                                    <div class="card-header text-center">Inactive Suppliers</div>
+                                    <div class="card-body">
+                                        <h2 class="card-title text-center">20</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                <div class="card text-bg-info text-white fw-bold mb-2 mt-2 me-4 ms-4 shadow" style="max-width: 18rem;">
+                                    <div class="card-header text-center">Users</div>
+                                    <div class="card-body">
+                                        <h2 class="card-title text-white text-center">10</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                    </div>
+                    <h3 class="text-center"> 🔰 Suppliers Locations</h3>
+                    <div class="rows-8">
+                        <iframe class="p-md-3 rounded-4 shadow " src="https://www.google.com/maps/d/u/0/embed?mid=1TNlVAzojU_vnbwq8hkQmgtp2H_44GZ4&ehbc=2E312F&z=10"  width="100%" height="415px"></iframe>
+                    </div>
+
+                </div>
+
+                </div>
+
+
+                <div aria-labelledby="v-pills-users-tab" class="tab-pane fade" id="v-pills-users" role="tabpanel"
+                     tabindex="0">
+
+                    <div class="container-fluid" style="width: 80vw;">
+                        <div class="row">
+                            <div class="col-md vertical-center border border-1 border-info bg-light rounded-4 mt-4 shadow">
+                                <form class="w-75 admin_form ">
+                                    <h6 class="text-center mt-5"><i class="fa-sharp fa-solid fa-circle-user fa-3x text-info"></i></h6>
+                                    <h2 class="text-center">Admin Form</h2>
+                                    <hr>
+                                    <!-- Admin Id input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="form2Example1" class="form-control" />
+                                        <label class="form-label" for="form2Example1">Admin Id</label>
+                                    </div>
+
+                                    <!-- Admin Name input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="form2Example2" class="form-control" />
+                                        <label class="form-label" for="form2Example2">Admin Name</label>
+                                    </div>
+
+                                    <!-- Admin Password input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="form2Example3" class="form-control" />
+                                        <label class="form-label" for="form2Example3">Admin Password</label>
+                                    </div>
+
+                                    <!-- Admin Contact input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="form2Example4" class="form-control" />
+                                        <label class="form-label" for="form2Example4">Admin Contact</label>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <button type="button" class="btn btn-primary btn-block mb-4">Sign Up</button>
+                                </form>
+                            </div>
+                            <div class="col-md mt-4" id="container_admin_table">
+                                <table class="table table-striped table-bordered table-hover  ">
+                                    <thead class="bg-info text-white">
+                                    <tr>
+                                        <th>Admin Id</th>
+                                        <th>Admin Name</th>
+                                        <th>Admin Password</th>
+                                        <th>Admin Contact</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="table-light">
+                                    <tr>
+                                        <td>Adm-001</td>
+                                        <td>Admin 1</td>
+                                        <td>********</td>
+                                        <td>1234567890</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Adm-001</td>
+                                        <td>Admin 1</td>
+                                        <td>********</td>
+                                        <td>1234567890</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Adm-001</td>
+                                        <td>Admin 1</td>
+                                        <td>********</td>
+                                        <td>1234567890</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Adm-001</td>
+                                        <td>Admin 1</td>
+                                        <td>********</td>
+                                        <td>1234567890</td>
+                                    </tr>
+                                    <!-- Add more rows dynamically or using server-side logic -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div aria-labelledby="v-pills-suppliers-tab" class="tab-pane fade" id="v-pills-suppliers" role="tabpanel"
+                     tabindex="0">
+                    <p>C Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid enim incidunt officia
+                        reiciendis
+                        sapiente. Consequuntur facilis incidunt natus optio quam recusandae velit! Dignissimos
+                        distinctio
+                        error hic ipsam reiciendis! Aliquam amet architecto asperiores atque deserunt ducimus earum esse
+                        est et, eum ex illum ipsa maiores modi nam natus necessitatibus non nostrum omnis quae qui
+                        quibusdam
+                        quos ratione rem, sapiente sunt temporibus veritatis vero voluptates voluptatibus! Architecto
+                        asperiores dignissimos hic id necessitatibus omnis rem repellendus reprehenderit velit
+                        voluptate.
+                        Alias at, blanditiis culpa debitis deleniti eaque, eos ex excepturi explicabo, fuga minus
+                        nesciunt
+                        nisi obcaecati odit officia placeat qui sunt? Accusamus atque blanditiis, cupiditate distinctio
+                        doloremque ea eligendi, error fugiat in iusto pariatur possimus praesentium quos repellat
+                        reprehenderit,
+                        totam unde ut voluptates! Alias, animi atque cum doloremque ea hic ipsa laborum magnam mollitia
+                        nam
+                        optio qui quia sequi veniam voluptate. Aliquid animi commodi consequuntur deserunt dolor dolores
+                        dolorum earum eius error exercitationem fuga, maxime, nihil numquam odio quidem repellendus
+                        vitae.
+                        A aliquid amet culpa cum cupiditate debitis delectus dicta dignissimos dolore ea eaque eius enim
+                        eos esse incidunt ipsam iste iure laborum libero, minima minus, neque nihil, optio perferendis
+                        qui
+                        quisquam quod recusandae repellat soluta sunt tempore ut voluptate voluptatem. Dicta, hic,
+                        sed!</p>
+                </div>
+            </div>
+        </div>
 </section>
 
 

@@ -16,7 +16,7 @@
 }
 
 #login_page{
-
+ border: 1px solid rgba(255, 255, 255, 0.7);
     background: rgba(255, 255, 255, 0.09);
 }
 
@@ -57,5 +57,41 @@
     font-size: 30px !important;
 }
 
-.navbar-toggler {
+#dashboard{
+    height: 100vh;
+}
+
+.nav{
+    border-right: 1px solid #4f4d4d;
+    height: 100vh;
+}
+.nav-link{
+    font-weight: 500!important;
+    font-size: 0.9em!important;
+}
+
+.active_tab{
+    background-color: chocolate;!important;
+}
+
+.nav-link:hover{
+    color: #ffff00;
+    font-weight: 600!important;
+    background-color: #0f82af;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 87vh;
+}
+#container_admin_table{
+    margin-left: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    height: 87vh;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+    overflow-y: scroll;
 }
