@@ -259,39 +259,47 @@
                     <div class="container-fluid" style="width: 80vw;">
                         <div class="row">
                             <div class="col-md vertical-center border border-1 border-info bg-light rounded-4 mt-4 shadow">
-                                <form class="w-75 admin_form ">
+                                <form class="w-75" id="adminForm">
                                     <h6 class="text-center mt-5"><i class="fa-sharp fa-solid fa-circle-user fa-3x text-info"></i></h6>
                                     <h2 class="text-center">Admin Form</h2>
                                     <hr>
                                     <!-- Admin Id input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="text" id="adminId" class="form-control" name="id" />
-                                        <label class="form-label " for="adminId">Admin Id</label>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="adminId">Admin ID</label>
+                                        <input class="form-control admin_form" id="adminId" name="id" placeholder="ADM-001 "
+                                               type="text">
                                     </div>
 
                                     <!-- Admin Name input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="text" id="adminName" class="form-control" name="name" />
+                                    <div class="mb-3">
                                         <label class="form-label" for="adminName">Admin Name</label>
-                                        <span class="control-error" id="lblAdminName"></span>
+                                        <input class="form-control admin_form" id="adminName" name="name"
+                                               placeholder="Ishara Maduranga" type="text">
+                                        <span class="control-error text-danger" id="lblAdminName"></span>
                                     </div>
 
+
                                     <!-- Admin Password input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="adminPassword" class="form-control" name="password" />
+                                    <div class="mb-3">
                                         <label class="form-label" for="adminPassword">Admin Password</label>
-                                        <span class="control-error" id="lblAdminAddress"></span>
+                                        <input class="form-control admin_form" id="adminPassword" name="password"
+                                               placeholder="******" type="password">
+                                        <span class="control-error text-danger" id="lblAdminAddress"><small></small></span>
                                     </div>
 
                                     <!-- Admin Contact input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="text" id="adminContact" class="form-control" name="contact" />
+                                    <div class="mb-3">
                                         <label class="form-label" for="adminContact">Admin Contact</label>
-                                        <span class="control-error" id="lblAdminContact"></span>
+                                        <input class="form-control admin_form" id="adminContact" name="contact"
+                                               placeholder="077-*******" type="text">
+                                        <span class="control-error text-danger" id="lblAdminContact"></span>
                                     </div>
 
-                                    <!-- Submit button -->
-                                    <button type="button" id="addBtn" class="btn btn-primary btn-block mb-4">Add User</button>
+                                    <button class="btn btn-success" id="addAdmin" type="button">Add</button>
+                                    <button class="btn btn-primary" id="updateBtn" type="button">Update</button>
+                                    <button class="btn btn-danger" id="deleteBtn" type="button">Delete</button>
+                                    <button class="btn btn-warning" id="clearBtn" type="button">Clear</button>
+
                                 </form>
                             </div>
                             <div class="col-md mt-4" id="container_admin_table">
@@ -304,34 +312,8 @@
                                         <th>Admin Contact</th>
                                     </tr>
                                     </thead>
-                                    <tbody class="table-light">
-                                    <tr>
-                                        <td>Adm-001</td>
-                                        <td>Admin 1</td>
-                                        <td>********</td>
-                                        <td>1234567890</td>
-                                    </tr>
+                                    <tbody class="table-light" id="adminTable">
 
-                                    <tr>
-                                        <td>Adm-001</td>
-                                        <td>Admin 1</td>
-                                        <td>********</td>
-                                        <td>1234567890</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Adm-001</td>
-                                        <td>Admin 1</td>
-                                        <td>********</td>
-                                        <td>1234567890</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Adm-001</td>
-                                        <td>Admin 1</td>
-                                        <td>********</td>
-                                        <td>1234567890</td>
-                                    </tr>
                                     <!-- Add more rows dynamically or using server-side logic -->
                                     </tbody>
                                 </table>
@@ -386,10 +368,10 @@
 ></script>
 
 <!--Import js for jQuery-->
-<script src="./assets/jquery/jquery-3.6.1.min.js"></script>
+<script src="./assets/jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
 
 <!--Import style .js file link-->
-<script src="./styles/style.js"></script>
+
 <script src="./controllers/AdminCrudController.js"></script>
 </body>
 </html>

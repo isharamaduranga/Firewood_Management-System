@@ -95,3 +95,6 @@
     box-shadow: 0px 0px 10px #ccc;
     overflow-y: scroll;
 }
+.control-error{
+    font-size: 13px;
+}
