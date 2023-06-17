@@ -8,5 +8,9 @@ public interface AdminService {
     void addAdmin(AdminDTO dto);
 
     ArrayList<AdminDTO> getAllAdmins();
+
+    void deleteAdmin(String id);
+
+    void updateAdmin(AdminDTO dto);
 }
 

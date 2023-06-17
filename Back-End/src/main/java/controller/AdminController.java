@@ -36,4 +36,17 @@ public class AdminController {
         return new ResponseUtil(200,"Success..",allAdmin);
     }
 
+
+    @DeleteMapping(params = "id")
+    public ResponseUtil deleteAdmin(String id) {
+        service.deleteAdmin(id);
+        return new ResponseUtil(200, id + " Successfully deleted...!", null);
+    }
+
+    @PutMapping
+    public ResponseUtil updateAdmin(@RequestBody AdminDTO dto) {
+        service.updateAdmin(dto);
+        return new ResponseUtil(200, dto.getId() + " Successfully updated..", null);
+    }
+
 }

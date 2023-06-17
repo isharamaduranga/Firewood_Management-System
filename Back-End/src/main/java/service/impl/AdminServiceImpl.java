@@ -45,7 +45,21 @@ public class AdminServiceImpl implements AdminService {
         return  mapper.map(adminList,new TypeToken<ArrayList<AdminDTO>>() {}.getType());
     }
 
+    @Override
+    public void deleteAdmin(String id) {
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Admin "+id+" Not Available to Delete..!");
+        }
+        repo.deleteById(id);
+    }
 
+    @Override
+    public void updateAdmin(AdminDTO dto) {
+        if (!repo.existsById(dto.getId())){
+            throw new RuntimeException("Admin "+dto.getId()+" Not Available to Update..!");
+        }
+        repo.save(mapper.map(dto,Admin.class));
+    }
 
 
 }
