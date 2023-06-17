@@ -265,30 +265,33 @@
                                     <hr>
                                     <!-- Admin Id input -->
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example1" class="form-control" />
-                                        <label class="form-label" for="form2Example1">Admin Id</label>
+                                        <input type="text" id="adminId" class="form-control" name="id" />
+                                        <label class="form-label " for="adminId">Admin Id</label>
                                     </div>
 
                                     <!-- Admin Name input -->
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example2" class="form-control" />
-                                        <label class="form-label" for="form2Example2">Admin Name</label>
+                                        <input type="text" id="adminName" class="form-control" name="name" />
+                                        <label class="form-label" for="adminName">Admin Name</label>
+                                        <span class="control-error" id="lblAdminName"></span>
                                     </div>
 
                                     <!-- Admin Password input -->
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example3" class="form-control" />
-                                        <label class="form-label" for="form2Example3">Admin Password</label>
+                                        <input type="password" id="adminPassword" class="form-control" name="password" />
+                                        <label class="form-label" for="adminPassword">Admin Password</label>
+                                        <span class="control-error" id="lblAdminAddress"></span>
                                     </div>
 
                                     <!-- Admin Contact input -->
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example4" class="form-control" />
-                                        <label class="form-label" for="form2Example4">Admin Contact</label>
+                                        <input type="text" id="adminContact" class="form-control" name="contact" />
+                                        <label class="form-label" for="adminContact">Admin Contact</label>
+                                        <span class="control-error" id="lblAdminContact"></span>
                                     </div>
 
                                     <!-- Submit button -->
-                                    <button type="button" class="btn btn-primary btn-block mb-4">Sign Up</button>
+                                    <button type="button" id="addBtn" class="btn btn-primary btn-block mb-4">Add User</button>
                                 </form>
                             </div>
                             <div class="col-md mt-4" id="container_admin_table">
