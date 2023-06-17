@@ -1,6 +1,5 @@
 /** Back end Request URL */
 let baseURLAdminCrud = "http://localhost:8080/Back_End_war_exploded/"
-
 /**Admin Regex Patterns */
 const adminIdRegEx = /^(ADM-)[0-9]{1,3}$/;
 const adminNameRegEx = /^[A-z ]{5,20}$/;
