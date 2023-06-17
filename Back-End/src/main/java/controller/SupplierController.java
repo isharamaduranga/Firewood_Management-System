@@ -8,14 +8,43 @@
 
 package controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import dto.AdminDTO;
+import dto.SupplierDTO;
+import org.springframework.web.bind.annotation.*;
+import service.SupplierService;
+import util.ResponseUtil;
+
+import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/supplier")
+@RequestMapping("supplier")
+@CrossOrigin
 public class SupplierController {
 
-    public SupplierController() {
-        System.out.println("Running supplier controller class...");
+    private SupplierService service;
+
+    @PostMapping
+    public ResponseUtil saveAdmin(@ModelAttribute SupplierDTO dto){
+        service.addSupplier(dto);
+        return new ResponseUtil(200, dto.getNic()+ " Successfully Added...",null);
+    }
+
+    @GetMapping
+    public ResponseUtil getAllSuppliers(){
+        ArrayList<SupplierDTO> allSuppliers = service.getAllSuppliers();
+        return new ResponseUtil(200,"Success..",allSuppliers);
+    }
+
+
+    @DeleteMapping(params = "id")
+    public ResponseUtil deleteSupplier(String nic) {
+        service.deleteSupplier(nic);
+        return new ResponseUtil(200, nic + " Successfully deleted...!", null);
+    }
+
+    @PutMapping
+    public ResponseUtil updateAdmin(@RequestBody SupplierDTO dto) {
+        service.updateSupplier(dto);
+        return new ResponseUtil(200, dto.getNic() + " Successfully updated..", null);
     }
 }
