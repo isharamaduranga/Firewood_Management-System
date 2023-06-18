@@ -29,15 +29,14 @@ public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id ;
-    @CreationTimestamp
-    LocalDate date;
-    String nic;
     String fullName;
     String nameWithInitials;
+    String nic;
+    @CreationTimestamp
+    LocalDate date;
     String address;
     String district;
     double distance;
     String contact;
     String status;
-
 }

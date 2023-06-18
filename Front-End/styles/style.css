@@ -3,17 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
 
-#home{
+#home_page{
     background-image: url('../assets/images/home.jpg');
     height: 100vh;
     background-size: cover; /* Adjusts the image to cover the entire background */
     background-repeat: no-repeat;
 }
 
-#home_page{
-    height: 90vh;
-}
+
 
 #login_page{
  border: 1px solid rgba(255, 255, 255, 0.7);
@@ -58,26 +59,23 @@
 }
 
 #dashboard{
-    height: 100vh;
+    height: 91vh;
 }
 
 .nav{
+    height: 91vh;
     border-right: 1px solid #4f4d4d;
-    height: 100vh;
 }
 .nav-link{
     font-weight: 500!important;
     font-size: 0.9em!important;
 }
 
-.active_tab{
-    background-color: chocolate;!important;
-}
 
 .nav-link:hover{
     color: #ffff00;
     font-weight: 600!important;
-    background-color: #0f82af;
+    background-color: #6ccaef;
 }
 
 .vertical-center {
@@ -99,10 +97,25 @@
     font-size: 13px;
 }
 
-#v-pills-users{
+#v-pills-users  , #v-pills-suppliers_active , #v-pills-suppliers_inactive{
     background-image: url('../assets/images/bg.jpg');
-    height: 100vh;
-    width: 83vw;
+    height: 91vh;
+    width: 84vw;
     background-size: cover; /* Adjusts the image to cover the entire background */
     background-repeat: no-repeat;
+}
+#container_admin_table{
+    background-color: rgba(255, 255, 255, 0.44);
+}
+
+
+span{
+    color: red;
+}
+.active_tab{
+    color: crimson;
+}
+
+#supplierTbl{
+    background-color: rgba(255, 255, 255, 0.44);
 }

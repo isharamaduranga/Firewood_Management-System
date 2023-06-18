@@ -12,5 +12,7 @@ public interface AdminService {
     void deleteAdmin(String id);
 
     void updateAdmin(AdminDTO dto);
+
+    AdminDTO findByPasswordAndUsername(String password, String name);
 }
 

@@ -21,10 +21,10 @@ import java.time.LocalDate;
 @ToString
 public class SupplierDTO {
     Long id ;
-    LocalDate date;
-    String nic;
     String fullName;
     String nameWithInitials;
+    String nic;
+    LocalDate date;
     String address;
     String district;
     double distance;

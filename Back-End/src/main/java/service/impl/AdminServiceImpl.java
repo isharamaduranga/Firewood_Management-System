@@ -61,5 +61,9 @@ public class AdminServiceImpl implements AdminService {
         repo.save(mapper.map(dto,Admin.class));
     }
 
-
+    @Override
+    public AdminDTO findByPasswordAndUsername(String password, String name) {
+        Admin data = this.repo.findByPasswordAndName(password, name);
+        return mapper.map(data,AdminDTO.class);
+    }
 }

@@ -19,13 +19,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="./styles/style.css" rel="stylesheet">
 </head>
-<body id="home">
-<h1 class="text-white text-center mt-5 mb-5">Fire Wood Management System</h1>
+<body>
+
 <section id="home_page">
+    <h1 class="text-white text-center pt-5 mb-5">Fire Wood Management System</h1>
     <div class="container shadow col-md-3   ps-3  pe-3  rounded-5" id="login_page" style="padding: 5px">
 
         <!-- Pills navs -->
-        <h6 class="text-center mt-5"><i class="fa-sharp fa-solid fa-circle-user fa-3x text-info"></i></h6>
+        <h6 class="text-center pt-5"><i class="fa-sharp fa-solid fa-circle-user fa-3x text-info"></i></h6>
         <h2 class=" text-center"> LOGIN </h2>
         <hr class="text-white mb-5">
         <!-- Pills navs -->
@@ -35,29 +36,21 @@
             <div aria-labelledby="tab-login" class="tab-pane fade show active" id="pills-login" role="tabpanel">
                 <form>
                     <!-- Email input -->
-                    <div class="form-outline  mb-4">
-                        <input class="form-control text-white " id="loginName" type="text"/>
-                        <label class="form-label " for="loginName">Email or Username</label>
+                    <div class="form-outline">
+                        <input class="form-control" id="loginAdminname" type="text"/>
+                        <label class="form-label " for="loginAdminname"> <span>* </span>Username</label>
                     </div>
+                    <pre><small class="mb-4"> </small></pre>
 
                     <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <input class="form-control text-white " id="loginPassword" style="border-color: red!important;"
-                               type="password"/>
-                        <label class="form-label " for="loginPassword">Password</label>
+                    <div class="form-outline ">
+                        <input class="form-control" id="loginAdminpassword" type="password"/>
+                        <label class="form-label " for="loginAdminpassword"><span>* </span>Password</label>
                     </div>
-
-                    <!-- 2 column grid layout -->
-                    <div class="row mb-4">
-                        <div class="col-md-6 d-flex justify-content-center">
-
-                        </div>
-
-
-                    </div>
+                    <pre><small class="mb-5"></small></pre>
 
                     <!-- Submit button -->
-                    <button class="btn btn-primary btn-block mb-4" type="submit">Sign in</button>
+                    <button class="btn btn-primary btn-block  mb-4" id="submit_btn" type="button">Sign in</button>
 
                 </form>
             </div>
@@ -128,28 +121,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="menu-item" id="logout" href="#"> <i class="fa-solid fa-right-from-bracket"></i> LOG OUT</i></a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Suppliers</a>
-                    </li>
-
-
-                    <div class="collapse navbar-collapse" id="carDropDown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <button aria-expanded="false" class="btn btn-dark dropdown-toggle"
-                                        data-bs-toggle="dropdown">
-                                    Suppliers Status
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item bg-success" href="#">Active Suppliers</a></li>
-                                    <li><a class="dropdown-item bg-danger" href="#">Inactive Suppliers</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
                 </ul>
             </div>
         </div>
@@ -181,21 +154,34 @@
                     data-bs-target="#v-pills-suppliers"
                     data-bs-toggle="pill" id="v-pills-suppliers-tab" role="tab" type="button">Suppliers
             </button>
+
+            <button  aria-controls="v-pills-suppliers_active" aria-selected="false" class="nav-link text-success fw-bold "
+                    data-bs-target="#v-pills-suppliers_active"
+                    data-bs-toggle="pill" id="v-pills-active-tab" role="tab" type="button">Active
+            </button>
+
+            <button aria-controls="v-pills-suppliers_inactive" aria-selected="false" class="nav-link text-danger fw-bold "
+                    data-bs-target="#v-pills-suppliers_inactive"
+                    data-bs-toggle="pill" id="v-pills-inactive-tab" role="tab" type="button">Inactive
+            </button>
+
+
         </div>
 
         <div class="tab-content" id="v-pills-tabContent">
             <div aria-labelledby="v-pills-home-tab" class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                  tabindex="0">
-                <pre><h2 class="text-center mt-2">A D M I N  D A S H B O A R D</h2></pre>
+                <dfn id="suppliers"></dfn>
+                <h2 class="text-center mt-2"><b>ADMIN DASHBOARD</b></h2>
                 <hr class="m-2">
 
                 <div class=" container-fluid d-flex flex-wrap row ">
-                    <div class="row-4 row d-flex flex-wrap mb-5  justify-content-center">
+                    <div class=" row d-flex flex-wrap mb-5  justify-content-center">
 
 
-                        <div class="col-3">
+                        <div class="col-md-3">
 
-                            <div class="card text-bg-warning  text-white fw-bold mb-2 mt-2 me-4 ms-4 shadow "
+                            <div class="card text-bg-warning  text-white fw-bold  mt-2 me-5 ms-5 shadow "
                                  style="max-width: 18rem;">
                                 <div class="card-header text-center">Total Suppliers</div>
                                 <div class="card-body">
@@ -205,9 +191,9 @@
 
                         </div>
 
-                        <div class="col-3">
+                        <div class="col-md-3">
 
-                            <div class="card text-bg-success text-white fw-bold mb-2 mt-2 me-4 ms-4 shadow"
+                            <div class="card text-bg-success text-white fw-bold  mt-2 me-5 ms-5 shadow"
                                  style="max-width: 18rem;">
                                 <div class="card-header text-center">Active Suppliers</div>
                                 <div class="card-body">
@@ -216,9 +202,9 @@
                             </div>
                         </div>
 
-                        <div class="col-3">
+                        <div class="col-md-3">
 
-                            <div class="card text-bg-danger text-white fw-bold mb-2 mt-2 me-4 ms-4 shadow"
+                            <div class="card text-bg-danger text-white fw-bold  mt-2 me-5 ms-5 shadow"
                                  style="max-width: 18rem;">
                                 <div class="card-header text-center">Inactive Suppliers</div>
                                 <div class="card-body">
@@ -227,8 +213,8 @@
                             </div>
                         </div>
 
-                        <div class="col-3">
-                            <div class="card text-bg-info text-white fw-bold mb-2 mt-2 me-4 ms-4 shadow"
+                        <div class="col-md-3">
+                            <div class="card text-bg-info text-white fw-bold  mt-2 me-5 ms-5 shadow"
                                  style="max-width: 18rem;">
                                 <div class="card-header text-center">Users</div>
                                 <div class="card-body">
@@ -239,25 +225,24 @@
 
 
                     </div>
-                    <h3 class="text-center"> 🔰 Suppliers Locations</h3>
-                    <div class="rows-8">
+
+                    <div>
+                        <h3 class="text-center"> 🔰 Suppliers Locations</h3>
                         <iframe class="p-md-3 rounded-4 shadow "
-                                height="415px"
+                                height="156%"
                                 src="https://www.google.com/maps/d/u/0/embed?mid=1TNlVAzojU_vnbwq8hkQmgtp2H_44GZ4&ehbc=2E312F&z=10" width="100%"></iframe>
                     </div>
 
                 </div>
 
             </div>
-
-
             <div aria-labelledby="v-pills-users-tab" class="tab-pane fade" id="v-pills-users" role="tabpanel"
                  tabindex="0">
 
-                <div class="container-fluid" style="width: 80vw;">
+                <div class="container pt-2">
                     <div class="row">
-                        <div class="col-md vertical-center border border-1 border-info bg-light rounded-4 mt-4 shadow">
-                            <form class="w-75" id="adminForm">
+                        <div class="col-md vertical-center border border-1 border-info bg-light rounded-4 mt-2 ms-2 shadow">
+                            <form  id="adminForm">
                                 <h6 class="text-center mt-5"><i
                                         class="fa-sharp fa-solid fa-circle-user fa-3x text-info"></i></h6>
                                 <h2 class="text-center">Admin Form</h2>
@@ -301,7 +286,7 @@
 
                             </form>
                         </div>
-                        <div class="col-md mt-4" id="container_admin_table">
+                        <div class="col-md mt-2" id="container_admin_table">
                             <table class="table table-striped table-bordered table-hover  ">
                                 <thead class="bg-info text-white">
                                 <tr>
@@ -324,32 +309,134 @@
             </div>
             <div aria-labelledby="v-pills-suppliers-tab" class="tab-pane fade" id="v-pills-suppliers" role="tabpanel"
                  tabindex="0">
-                <p>C Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid enim incidunt officia
-                    reiciendis
-                    sapiente. Consequuntur facilis incidunt natus optio quam recusandae velit! Dignissimos
-                    distinctio
-                    error hic ipsam reiciendis! Aliquam amet architecto asperiores atque deserunt ducimus earum esse
-                    est et, eum ex illum ipsa maiores modi nam natus necessitatibus non nostrum omnis quae qui
-                    quibusdam
-                    quos ratione rem, sapiente sunt temporibus veritatis vero voluptates voluptatibus! Architecto
-                    asperiores dignissimos hic id necessitatibus omnis rem repellendus reprehenderit velit
-                    voluptate.
-                    Alias at, blanditiis culpa debitis deleniti eaque, eos ex excepturi explicabo, fuga minus
-                    nesciunt
-                    nisi obcaecati odit officia placeat qui sunt? Accusamus atque blanditiis, cupiditate distinctio
-                    doloremque ea eligendi, error fugiat in iusto pariatur possimus praesentium quos repellat
-                    reprehenderit,
-                    totam unde ut voluptates! Alias, animi atque cum doloremque ea hic ipsa laborum magnam mollitia
-                    nam
-                    optio qui quia sequi veniam voluptate. Aliquid animi commodi consequuntur deserunt dolor dolores
-                    dolorum earum eius error exercitationem fuga, maxime, nihil numquam odio quidem repellendus
-                    vitae.
-                    A aliquid amet culpa cum cupiditate debitis delectus dicta dignissimos dolore ea eaque eius enim
-                    eos esse incidunt ipsam iste iure laborum libero, minima minus, neque nihil, optio perferendis
-                    qui
-                    quisquam quod recusandae repellat soluta sunt tempore ut voluptate voluptatem. Dicta, hic,
-                    sed!</p>
+
+                    <button id="addSupplier" type="button" class="btn btn-success text-center" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            data-bs-whatever="@getbootstrap">Add New Supplier</button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Supplier Form</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="supplier_form">
+                                    <div class="row">
+
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="supplierName">Full Name</label>
+                                            <input class="form-control admin_form" id="supplierName" name="fullName"
+                                                   placeholder="Mr.user name" type="text">
+                                            <span class="control-error" id="lblSupplierName"></span>
+                                        </div>
+
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="supplierNameWithInitials">Name with Initials</label>
+                                            <input class="form-control admin_form" id="supplierNameWithInitials" name="nameWithInitials" placeholder="*********** "
+                                                   type="text">
+                                            <span class="control-error" id="lblSupplierNameWithInitials"></span>
+                                        </div>
+
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="supplierNic">Nic</label>
+                                            <input class="form-control admin_form" id="supplierNic" name="nic" placeholder="*********V"
+                                                   type="text">
+                                            <span class="control-error" id="lblSupplierNic"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="createDate">Date</label>
+                                            <input class="form-control admin_form" id="createDate" name="date"
+                                                   placeholder="YYYY-MM-DD" type="date">
+                                            <span class="control-error" id="lblCreateDate"></span>
+                                        </div>
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="supplierAddress">Address</label>
+                                            <input class="form-control admin_form" id="supplierAddress" name="address"
+                                                   placeholder="Colombo 05" type="text">
+                                            <span class="control-error" id="lblSupplierAddress"></span>
+                                        </div>
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="supplierDistrict">District</label>
+                                            <input class="form-control admin_form" id="supplierDistrict" name="address"
+                                                   placeholder="Colombo" type="text">
+                                            <span class="control-error" id="lblSupplierDistrict"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="supplierDistance">Distance</label>
+                                            <input class="form-control admin_form" id="supplierDistance" name="date"
+                                                   placeholder="50.25" type="text">
+                                            <span class="control-error" id="lblSupplierDistance"></span>
+                                        </div>
+
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="woodWeight">Wood Weight</label>
+                                            <input class="form-control admin_form" id="woodWeight" name="date"
+                                                   placeholder="5000" type="text">
+                                            <span class="control-error" id="lblWoodWeight"></span>
+                                        </div>
+
+
+                                        <div class="mb-3 col-4">
+                                            <label class="form-label" for="supplierContact">Contact</label>
+                                            <input class="form-control admin_form" id="supplierContact" name="contact"
+                                                   placeholder="071-*******" type="text">
+                                            <span class="control-error" id="lblSupplierContact"></span>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="dropdown mb-3 col-4">
+                                            <label class="form-label" for="supplierContact">Status</label><br>
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Dropdown button
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Active</a></li>
+                                                <li><a class="dropdown-item" href="#">InActive</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="text-center">
+                                        <button class="btn btn-primary" id="addSupplierBtn" type="button">Add</button>
+                                        <button class="btn btn-info" id="updateSupplierBtn" type="button">Update</button>
+                                        <button class="btn btn-danger" id="deleteSupplierBtn" type="button">Delete</button>
+                                        <button class="btn btn-warning" id="clearSupplierBtn" type="button">Clear</button>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Send message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
+
+            <div aria-labelledby="v-pills-active-tab" class="tab-pane fade" id="v-pills-suppliers_active" role="tabpanel" tabindex="0">
+
+            </div>
+            <div aria-labelledby="v-pills-inactive-tab" class="tab-pane fade" id="v-pills-suppliers_inactive" role="tabpanel" tabindex="0">
+
+            </div>
+
         </div>
     </div>
 </section>
@@ -371,6 +458,9 @@
 
 <!--Import style .js file link-->
 
+<script src="./controllers/NavigationController.js"></script>
+<script src="./styles/style.js"></script>
+<script src="./controllers/UserLoginController.js"></script>
 <script src="./controllers/AdminCrudController.js"></script>
 </body>
 </html>

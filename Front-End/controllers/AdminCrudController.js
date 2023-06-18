@@ -138,12 +138,14 @@ function defaultText(txtField, massage) {
     txtField.parent().children('span').text(massage);
 }
 
+
+$("#addAdmin").attr('disabled', true);
 /** function of Button State */
 function setButtonState(count) {
     if (count > 0) {
-        $("#addBtn").attr('disabled', true);
+        $("#addAdmin").attr('disabled', true);
     } else {
-        $("#addBtn").attr('disabled', false);
+        $("#addAdmin").attr('disabled', false);
     }
 }
 
@@ -172,9 +174,6 @@ function clearTextFields() {
     $('#adminPassword').val("");
     $('#adminContact').val("");
 }
-$("#addAdmin").click(function () {
-    saveAdmins();
-})
 
 loadAllAdmins();
 
@@ -182,10 +181,6 @@ loadAllAdmins();
 function saveAdmins() {
 
     let formdata = $("#adminForm").serialize();
-
-    alert(formdata);
-
-    console.log(formdata)
 
     $.ajax({
         url: baseURLAdminCrud + "admin",
@@ -204,6 +199,10 @@ function saveAdmins() {
 
     });
 }
+
+$("#addAdmin").click(function () {
+    saveAdmins();
+})
 
 
 $("#getAllBtn").click(function () {
