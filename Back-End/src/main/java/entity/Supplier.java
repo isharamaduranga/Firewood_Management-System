@@ -29,13 +29,12 @@ public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id ;
-    String fullName;
-    String nameWithInitials;
+    String name;
     String nic;
     @CreationTimestamp
     LocalDate date;
-    String address;
-    String district;
+    String woodType;
+    String area;
     double distance;
     String contact;
     String status;

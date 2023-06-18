@@ -97,13 +97,21 @@ body{
     font-size: 13px;
 }
 
-#v-pills-users  , #v-pills-suppliers_active , #v-pills-suppliers_inactive{
+#v-pills-users , #v-pills-suppliers_active , #v-pills-suppliers_inactive{
     background-image: url('../assets/images/bg.jpg');
     height: 91vh;
     width: 84vw;
     background-size: cover; /* Adjusts the image to cover the entire background */
     background-repeat: no-repeat;
 }
+
+#v-pills-suppliers{
+    padding: 20px;
+    height: 91vh;
+    width: 84vw;
+    background: rgba(255, 255, 255, 0.32);
+}
+
 #container_admin_table{
     background-color: rgba(255, 255, 255, 0.44);
 }
@@ -112,10 +120,18 @@ body{
 span{
     color: red;
 }
-.active_tab{
-    color: crimson;
-}
 
 #supplierTbl{
     background-color: rgba(255, 255, 255, 0.44);
+}
+
+#container_Supplier_table{
+    height: 48vh;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+thead {
+    top: 0;
+    position: sticky;
 }

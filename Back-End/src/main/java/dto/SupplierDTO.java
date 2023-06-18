@@ -21,12 +21,11 @@ import java.time.LocalDate;
 @ToString
 public class SupplierDTO {
     Long id ;
-    String fullName;
-    String nameWithInitials;
+    String name;
     String nic;
     LocalDate date;
-    String address;
-    String district;
+    String woodType;
+    String area;
     double distance;
     String contact;
     String status;
