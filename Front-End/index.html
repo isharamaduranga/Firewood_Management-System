@@ -498,105 +498,96 @@
                        </table>
                    </div>
                </div>
-
-
            </div>
-               <!-- <div class="container">
-
-                    <form id="supplier_form">
-                        <div class="row">
-
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="supplierName">Full Name</label>
-                                <input class="form-control admin_form" id="supplierName" name="fullName"
-                                       placeholder="Mr.user name" type="text">
-                                <span class="control-error" id="lblSupplierName"></span>
-                            </div>
-
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="supplierNameWithInitials">Name with Initials</label>
-                                <input class="form-control admin_form" id="supplierNameWithInitials"
-                                       name="nameWithInitials" placeholder="*********** "
-                                       type="text">
-                                <span class="control-error" id="lblSupplierNameWithInitials"></span>
-                            </div>
-
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="supplierNic">Nic</label>
-                                <input class="form-control admin_form" id="supplierNic" name="nic"
-                                       placeholder="*********V"
-                                       type="text">
-                                <span class="control-error" id="lblSupplierNic"></span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="createDate">Date</label>
-                                <input class="form-control admin_form" id="createDate" name="date"
-                                       placeholder="YYYY-MM-DD" type="date">
-                                <span class="control-error" id="lblCreateDate"></span>
-                            </div>
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="supplierAddress">Address</label>
-                                <input class="form-control admin_form" id="supplierAddress" name="address"
-                                       placeholder="Colombo 05" type="text">
-                                <span class="control-error" id="lblSupplierAddress"></span>
-                            </div>
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="supplierDistrict">District</label>
-                                <input class="form-control admin_form" id="supplierDistrict" name="address"
-                                       placeholder="Colombo" type="text">
-                                <span class="control-error" id="lblSupplierDistrict"></span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="supplierDistance">Distance</label>
-                                <input class="form-control admin_form" id="supplierDistance" name="date"
-                                       placeholder="50.25" type="text">
-                                <span class="control-error" id="lblSupplierDistance"></span>
-                            </div>
-
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="woodWeight">Wood Weight</label>
-                                <input class="form-control admin_form" id="woodWeight" name="date"
-                                       placeholder="5000" type="text">
-                                <span class="control-error" id="lblWoodWeight"></span>
-                            </div>
-
-
-                            <div class="mb-3 col-4">
-                                <label class="form-label" for="supplierContact">Contact</label>
-                                <input class="form-control admin_form" id="supplierContact" name="contact"
-                                       placeholder="071-*******" type="text">
-                                <span class="control-error" id="lblSupplierContact"></span>
-                            </div>
-                        </div>
-
-
-                        <div class="text-center">
-                            <button class="btn btn-primary" id="addSupplierBtn" type="button">Add</button>
-                            <button class="btn btn-info" id="updateSupplierBtn" type="button">Update</button>
-                            <button class="btn btn-danger" id="deleteSupplierBtn" type="button">Delete</button>
-                            <button class="btn btn-warning" id="clearSupplierBtn" type="button">Clear</button>
-                        </div>
-
-
-                    </form>
-
-                </div>-->
-
 
             </div>
 
             <div aria-labelledby="v-pills-active-tab" class="tab-pane fade" id="v-pills-suppliers_active"
                  role="tabpanel" tabindex="0">
+                <h1 class="text-center text-white ">Active Suppliers</h1>
+                <div class="container m-3" id="container_Supplier_Active_table">
+                    <table id="supplierActiveTbl" class="table table-striped  table-hover">
+                        <thead class="bg-info text-white">
 
+                        <tr>
+                            <th>No</th>
+                            <th>name</th>
+                            <th>Nic</th>
+                            <th>Date</th>
+                            <th>Wood Type</th>
+                            <th>Area</th>
+                            <th>Distance</th>
+                            <th>Contact</th>
+                            <th>Status</th>
+                        </tr>
+
+                        </thead>
+                        <tbody class="table-light" id="SupplierActiveTable">
+
+                        <tr>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                        </tr>    <tr>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+
             <div aria-labelledby="v-pills-inactive-tab" class="tab-pane fade" id="v-pills-suppliers_inactive"
                  role="tabpanel" tabindex="0">
+                <h1 class="text-center text-white ">Inactive Suppliers</h1>
+                <div class="container m-3" id="container_Supplier_Inactive_table">
+                    <table id="supplierInactiveTbl" class="table table-striped  table-hover">
+                        <thead class="bg-info text-white">
 
+                        <tr>
+                            <th>No</th>
+                            <th>name</th>
+                            <th>Nic</th>
+                            <th>Date</th>
+                            <th>Wood Type</th>
+                            <th>Area</th>
+                            <th>Distance</th>
+                            <th>Contact</th>
+                            <th>Status</th>
+                        </tr>
+
+                        </thead>
+                        <tbody class="table-light" id="SupplierInactiveTable">
+
+                        <tr>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                            <td>hhhhhhhhh</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </div>

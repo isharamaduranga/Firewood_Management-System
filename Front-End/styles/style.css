@@ -99,6 +99,7 @@ body{
 
 #v-pills-users , #v-pills-suppliers_active , #v-pills-suppliers_inactive{
     background-image: url('../assets/images/bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/images/bg.jpg");
     height: 91vh;
     width: 84vw;
     background-size: cover; /* Adjusts the image to cover the entire background */
@@ -134,4 +135,12 @@ span{
 thead {
     top: 0;
     position: sticky;
+}
+
+#container_Supplier_Active_table , #container_Supplier_Inactive_table{
+   color: rgba(255, 255, 255, 0);
+    height: 80vh;
+    width: 81vw;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
