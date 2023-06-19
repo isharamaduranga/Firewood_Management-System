@@ -4,11 +4,9 @@ let baseURLSupplierCrud = "http://localhost:8080/Back_End_war_exploded/"
 var supplierNameRegEx = /^[A-z ]{5,20}$/;
 var supplierNicRegEx = /^[0-9A-z]{8,20}$/;
 var DateRegEx = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
-var woodTypeRegex = /^(Rubber|Gliricidia)$/;
 var areaRegEx = /^[0-9A-Z a-z,/:]{4,50}$/;
 var distanceRegExx = /^[0-9]{1,5}$/;
 var contactRegEx = /^(071|077|075|078|076)[0-9]{7}$/;
-var statusRegex = /^(Active|Inactive)$/;
 
 $("#supplierName").keyup(function (event) {
     let supplierName = $("#supplierName").val();
@@ -52,17 +50,7 @@ $("#createDate").keyup(function (event) {
     }
 });
 
-$("#woodType").keyup(function (event) {
-    let type = $("#woodType").val();
-    if (woodTypeRegex.test(type)) {
-        $("#woodType").css('border', '1.5px solid limegreen');
-        if (event.key == "Enter") {
-            $("#supplierArea").focus();
-        }
-    } else {
-        $("#woodType").css('border', '1.5px solid red');
-    }
-});
+
 
 $("#supplierArea").keyup(function (event) {
     let area = $("#supplierArea").val();
@@ -91,3 +79,84 @@ $("#supplierDistance").keyup(function (event) {
         $("#lblSupplierDistance").text("Check field is correct !");
     }
 });
+
+$("#supplierContact").keyup(function (event) {
+    let contact = $("#supplierContact").val();
+    if (contactRegEx.test(contact)) {
+        $("#supplierContact").css('border', '1.5px solid limegreen');
+        $("#lblSupplierContact").text("");
+        if (event.key == "Enter") {
+            $("#status").focus();
+        }
+    } else {
+        $("#supplierDistance").css('border', '1.5px solid red');
+        $("#lblSupplierContact").text("Check field is correct !");
+    }
+});
+
+/*
+*   $('#supplierName').val(name);
+        $('#supplierNic').val(nic);
+        $('#createDate').val(date);
+        $('#woodType option:selected').text(woodType);
+        $('#supplierArea').val(area);
+        $('#supplierDistance').val(distance);
+        $('#supplierContact').val(contact);
+        $('#status option:selected').text(status);*/
+
+$("#addSupplierBtn").click(function () {
+
+    if ($("#supplierName").val()==""|| $("#supplierNic").val()==""|| $("#createDate").val()==""|| $("#woodType option:selected").val() == ""||
+        $("#supplierArea").val()==""|| $("#supplierDistance").val()==""|| $("#supplierContact").val()==""|| $("#status option:selected").val() == ""){
+        alert("All Fields Are Required !");
+    }else{
+        if ($("#lblSupplierName").text()!=""|| $("#lblSupplierNic").text()!="" || $("#lblCreateDate").text()!="" ||
+            $("#lblSupplierArea").text()!="" || $("#lblSupplierDistance").text()!="" || $("#lblSupplierContact").text()!=""){
+            alert("Check Input Fields Whether Correct !");
+        }else{
+            alert("Totally Correct ...")
+        }
+    }
+
+});
+
+/** BIND ROW CLICK EVENT FUNCTION ... */
+function setData_Bind_Row_Eventss() {
+    $('#SupplierTable>tr').click(function () {
+        let name = $(this).children(":eq(1)").text();
+        let nic = $(this).children(":eq(2)").text();
+        let date = $(this).children(":eq(3)").text();
+        let woodType = $(this).children(":eq(4)").text();
+        let area = $(this).children(":eq(5)").text();
+        let distance = $(this).children(":eq(6)").text();
+        let contact = $(this).children(":eq(7)").text();
+        let status = $(this).children(":eq(8)").text();
+
+
+        console.log(date)
+
+        /** setting table details values to text fields */
+        $('#supplierName').val(name);
+        $('#supplierNic').val(nic);
+        $('#createDate').val(date);
+        $('#woodType option:selected').text(woodType);
+        $('#supplierArea').val(area);
+        $('#supplierDistance').val(distance);
+        $('#supplierContact').val(contact);
+        $('#status option:selected').text(status);
+    });
+}
+$("#clearSupplierBtn").click(function () {
+    clearTextFields()
+});
+
+function clearTextFields() {
+    $('#supplierName').val("");
+    $('#supplierNic').val("");
+    $('#createDate').val("");
+    $('#woodType option:selected').text("None");
+    $('#supplierArea').val("");
+    $('#supplierDistance').val("");
+    $('#supplierContact').val("");
+    $('#status option:selected').text("None");
+}
