@@ -7,6 +7,7 @@
  */
 
 package controller;
+import dto.AdminDTO;
 import dto.SupplierDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -38,6 +39,12 @@ public class SupplierController {
         return new ResponseUtil(200,"Success..",allSuppliers);
     }
 
+
+    @GetMapping(path = "/{status}")
+    public ResponseUtil getAllSuppliersByStatus(@PathVariable String status){
+        ArrayList<SupplierDTO> allSuppliers = service.findSupplierByStatus(status);
+        return new ResponseUtil(200,"Success..",allSuppliers);
+    }
 
     @DeleteMapping(params = "id")
     public ResponseUtil deleteSupplier(Long id) {

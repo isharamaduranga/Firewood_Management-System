@@ -60,4 +60,10 @@ public class SupplierServiceImpl implements SupplierService {
         }
         repo.save(mapper.map(dto,Supplier.class));
     }
+
+    @Override
+    public ArrayList<SupplierDTO> findSupplierByStatus(String status) {
+        List<Supplier> supplierList = repo.findByStatus(status);
+        return  mapper.map(supplierList,new TypeToken<ArrayList<SupplierDTO>>() {}.getType());
+    }
 }

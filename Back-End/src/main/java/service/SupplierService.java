@@ -13,5 +13,7 @@ public interface SupplierService {
 
     void updateSupplier(SupplierDTO dto);
 
+    ArrayList<SupplierDTO> findSupplierByStatus(String status);
+
 
 }

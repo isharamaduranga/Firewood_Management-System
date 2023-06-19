@@ -146,6 +146,8 @@ function saveSupplier() {
         success: function (resp) {
             alert(resp.message);
             loadAllSupliers();
+            loadAllInactiveSuppliers();
+            loadAllActiveSuppliers();
         },
         error: function (error) {
             let jSObj = JSON.parse(error.responseText);
