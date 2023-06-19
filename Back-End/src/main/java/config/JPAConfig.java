@@ -42,7 +42,7 @@ public class JPAConfig {
         //We use this data source Only For accessing MYSQL database
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/firewood?createDatabaseIfNotExist=true");
+        ds.setUrl("jdbc:mysql://localhost:3306/firewood_system?createDatabaseIfNotExist=true");
 
         /** custom edit*/
         ds.setUsername("root");

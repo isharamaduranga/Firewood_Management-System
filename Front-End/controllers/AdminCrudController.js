@@ -139,7 +139,7 @@ function defaultText(txtField, massage) {
 }
 
 
-$("#addAdmin").attr('disabled', true);
+
 /** function of Button State */
 function setButtonState(count) {
     if (count > 0) {
@@ -148,6 +148,7 @@ function setButtonState(count) {
         $("#addAdmin").attr('disabled', false);
     }
 }
+
 
 /** BIND ROW CLICK EVENT FUNCTION ... */
 function setData_Bind_Row_Events() {
@@ -261,7 +262,6 @@ $("#updateBtn").click(function () {
         password: AdmPassword,
         contact: AdmContact
     }
-
     $.ajax({
         url: baseURLAdminCrud + "admin",
         method: "put",

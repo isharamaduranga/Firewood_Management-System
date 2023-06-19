@@ -344,9 +344,9 @@
                                <label class="form-label" for="woodType"><span class="text-danger fw-bold">*</span>Wood Type</label><br>
                                <select aria-label="Default select example" class="form-select"
                                        id="woodType" name="woodType">
-                                   <option selected value="0">None</option>
-                                   <option value="1">Rubber</option>
-                                   <option value="2">Gliricidia</option>
+                                   <option selected value="None">None</option>
+                                   <option value="Rubber">Rubber</option>
+                                   <option value="Gliricidia">Gliricidia</option>
                                </select>
                            </div>
 
@@ -378,9 +378,9 @@
                                <label class="form-label" for="status"><span class="text-danger fw-bold">*</span>Status</label><br>
                                <select aria-label="Default select example" class="form-select"
                                        name="status"   id="status">
-                                   <option selected value="0">None</option>
-                                   <option value="1">Active</option>
-                                   <option value="2">Inactive</option>
+                                   <option selected value="None">None</option>
+                                   <option value="Active">Active</option>
+                                   <option value="Inactive">Inactive</option>
                                </select>
                            </div>
                        </div>
@@ -391,6 +391,8 @@
                            <button class="btn btn-danger" id="deleteSupplierBtn" type="button">Delete</button>
                            <button class="btn btn-warning" id="clearSupplierBtn" type="button">Clear</button>
                            <button class="btn btn-success " id="exportExcelShhet" type="button">Export To Excel</button>
+                           <label id="longId" class="text-danger" style="display: none"></label>
+
                        </div>
                    </form>
                    <div class="container mt-5" id="container_Supplier_table">
@@ -407,21 +409,14 @@
                                <th>Distance</th>
                                <th>Contact</th>
                                <th>Status</th>
+                               <th style="display: none">Index</th>
                            </tr>
 
                            </thead>
                            <tbody class="table-light" id="SupplierTable">
 
                            <tr>
-                               <td>01</td>
-                               <td>Ishara</td>
-                               <td>970063439v</td>
-                               <td>1997/06/02</td>
-                               <td>Rubber</td>
-                               <td>Colombo</td>
-                               <td>50</td>
-                               <td>0776127572</td>
-                               <td>Active</td>
+
                            </tr>
                            </tbody>
                        </table>
@@ -453,17 +448,6 @@
                         </thead>
                         <tbody class="table-light" id="SupplierActiveTable">
 
-                        <tr>
-                            <td>hhhhhhhh</td>
-                            <td>hhhhhhhh</td>
-                            <td>hhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -492,17 +476,6 @@
                         </thead>
                         <tbody class="table-light" id="SupplierInactiveTable">
 
-                        <tr>
-                            <td>hhhhhhhh</td>
-                            <td>hhhhhhhh</td>
-                            <td>hhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                            <td>hhhhhhhhh</td>
-                        </tr>
 
                         </tbody>
                     </table>
@@ -535,5 +508,7 @@
 <script src="./controllers/UserLoginController.js"></script>
 <script src="./controllers/AdminCrudController.js"></script>
 <script src="./controllers/SupplierController.js"></script>
+<script src="./controllers/ActiveSupplierController.js"></script>
+<script src="./controllers/InactiveSupplierController.js"></script>
 </body>
 </html>

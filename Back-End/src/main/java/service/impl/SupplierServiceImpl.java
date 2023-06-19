@@ -16,7 +16,6 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repo.AdminRepo;
 import repo.SupplierRepo;
 import service.SupplierService;
 
@@ -37,9 +36,6 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public void addSupplier(SupplierDTO dto) {
-        if (repo.existsById(dto.getNic())) {
-            throw new RuntimeException("Supplier " + dto.getId() + " Already Exists..!!!");
-        }
         repo.save(mapper.map(dto, Supplier.class));
     }
 
@@ -50,16 +46,16 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
-    public void deleteSupplier(String nic) {
-        if (!repo.existsById(nic)){
-            throw new RuntimeException("Supplier "+nic+" Not Available to Delete..!");
+    public void deleteSupplier(Long id) {
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Supplier "+id+" Not Available to Delete..!");
         }
-        repo.deleteById(nic);
+        repo.deleteById(id);
     }
 
     @Override
     public void updateSupplier(SupplierDTO dto) {
-        if (!repo.existsById(dto.getNic())){
+        if (!repo.existsById(dto.getId())){
             throw new RuntimeException("Supplier "+dto.getNic()+" Not Available to Update..!");
         }
         repo.save(mapper.map(dto,Supplier.class));

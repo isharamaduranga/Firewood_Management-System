@@ -9,7 +9,9 @@ public interface SupplierService {
 
     ArrayList<SupplierDTO> getAllSuppliers();
 
-    void deleteSupplier(String nic);
+    void deleteSupplier(Long id);
 
     void updateSupplier(SupplierDTO dto);
+
+
 }

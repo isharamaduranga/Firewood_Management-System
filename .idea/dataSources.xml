@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="firewood@localhost" uuid="b8b4832c-d116-4095-97b6-eb35dabae12d">
+    <data-source source="LOCAL" name="firewood_system@localhost" uuid="24d02a35-ae31-4e94-924d-4940f7bc8a73">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/firewood</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/firewood_system</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

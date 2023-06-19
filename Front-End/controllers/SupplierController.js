@@ -104,21 +104,55 @@ $("#supplierContact").keyup(function (event) {
         $('#supplierContact').val(contact);
         $('#status option:selected').text(status);*/
 
+
+
 $("#addSupplierBtn").click(function () {
 
-    if ($("#supplierName").val()==""|| $("#supplierNic").val()==""|| $("#createDate").val()==""|| $("#woodType option:selected").val() == ""||
-        $("#supplierArea").val()==""|| $("#supplierDistance").val()==""|| $("#supplierContact").val()==""|| $("#status option:selected").val() == ""){
+    if ($("#supplierName").val()==""|| $("#supplierNic").val()==""|| $("#createDate").val()==""|| $("#woodType option:selected").val() == "None"||
+        $("#supplierArea").val()==""|| $("#supplierDistance").val()==""|| $("#supplierContact").val()==""|| $("#status option:selected").val() == "None"){
         alert("All Fields Are Required !");
     }else{
         if ($("#lblSupplierName").text()!=""|| $("#lblSupplierNic").text()!="" || $("#lblCreateDate").text()!="" ||
             $("#lblSupplierArea").text()!="" || $("#lblSupplierDistance").text()!="" || $("#lblSupplierContact").text()!=""){
             alert("Check Input Fields Whether Correct !");
         }else{
-            alert("Totally Correct ...")
+
+            saveSupplier();
+
         }
     }
-
 });
+
+
+
+function saveSupplier() {
+
+    var supplierData={
+        name:$('#supplierName').val(),
+        nic:$('#supplierNic').val(),
+        date:$('#createDate').val(),
+        woodType:$('#woodType option:selected').text(),
+        area: $('#supplierArea').val(),
+        distance: $('#supplierDistance').val(),
+        contact: $('#supplierContact').val(),
+        status:  $('#status option:selected').text()
+    }
+
+    $.ajax({
+        url: baseURLSupplierCrud+"supplier",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(supplierData),
+        success: function (resp) {
+            alert(resp.message);
+            loadAllSupliers();
+        },
+        error: function (error) {
+            let jSObj = JSON.parse(error.responseText);
+            alert(jSObj.message);
+        }
+    });
+}
 
 /** BIND ROW CLICK EVENT FUNCTION ... */
 function setData_Bind_Row_Eventss() {
@@ -131,21 +165,115 @@ function setData_Bind_Row_Eventss() {
         let distance = $(this).children(":eq(6)").text();
         let contact = $(this).children(":eq(7)").text();
         let status = $(this).children(":eq(8)").text();
+        let longId = $(this).children(":eq(9)").text();
+
+        console.log(longId);
 
 
-        console.log(date)
+
+
 
         /** setting table details values to text fields */
         $('#supplierName').val(name);
         $('#supplierNic').val(nic);
+        /*** find case */
         $('#createDate').val(date);
+
         $('#woodType option:selected').text(woodType);
         $('#supplierArea').val(area);
         $('#supplierDistance').val(distance);
         $('#supplierContact').val(contact);
         $('#status option:selected').text(status);
+        $('#longId').text(longId)
     });
 }
+
+loadAllSupliers();
+
+function loadAllSupliers() {
+    var count = 0;
+    $("#SupplierTable").empty();
+    $.ajax({
+        url: baseURLSupplierCrud + "supplier",
+        dataType: "json",
+
+        success: function (resp) {
+            console.log(resp.data);
+            for (let ad of resp.data) {
+
+                let month = ad.date[1]<10? "0"+ad.date[1]:ad.date[1];
+                let day = ad.date[2].l<10? "0"+ad.date[2]:ad.date[2];
+                console.log(month+" "+day);
+
+                $("#SupplierTable").append("" +
+                    "<tr><td>" + (++count) +
+                    "</td><td>" + ad.name +
+                    "</td> <td>" + ad.nic +
+                    "</td> <td>" + ad.date[0]+"-"+month+"-"+day+
+                    "</td> <td>" + ad.woodType +
+                    "</td><td>" + ad.area +
+                    "</td><td>" + ad.distance +
+                    "</td><td>" + ad.contact +
+                    "</td><td>" + ad.status +
+                    "</td><td style='display: none'>" + ad.id +
+                    "</td></tr>");
+            }
+            setData_Bind_Row_Eventss();
+            clearTextFields();
+        }
+    });
+}
+
+
+$("#updateSupplierBtn").click(function () {
+    var supplierDataForUpdate={
+        id:$('#longId').text(),
+        name:$('#supplierName').val(),
+        nic:$('#supplierNic').val(),
+        date:$('#createDate').val(),
+        woodType:$('#woodType option:selected').text(),
+        area: $('#supplierArea').val(),
+        distance: $('#supplierDistance').val(),
+        contact: $('#supplierContact').val(),
+        status:  $('#status option:selected').text()
+    }
+
+    $.ajax({
+        url: baseURLSupplierCrud + "supplier",
+        method: "put",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(supplierDataForUpdate),
+        success: function (resp) {
+            alert(resp.message);
+            loadAllSupliers();
+        },
+        error: function (error) {
+            let jsObj = JSON.parse(error.responseText);
+            alert(jsObj.message);
+        }
+    });
+});
+
+
+$("#deleteSupplierBtn").click(function () {
+    let supplierId = $("#longId").text();
+    $.ajax({
+        url: baseURLSupplierCrud + "supplier?id=" + supplierId,
+        method: "delete",
+        dataType: "json",
+        success: function (resp) {
+            alert(resp.message);
+            loadAllSupliers();
+        },
+        error: function (error) {
+            let jsObj = JSON.parse(error.responseText);
+            alert(jsObj.message);
+        }
+    });
+});
+
+
 $("#clearSupplierBtn").click(function () {
     clearTextFields()
 });

@@ -7,9 +7,9 @@
  */
 
 package controller;
-
-import dto.AdminDTO;
 import dto.SupplierDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import service.SupplierService;
 import util.ResponseUtil;
@@ -21,10 +21,13 @@ import java.util.ArrayList;
 @CrossOrigin
 public class SupplierController {
 
+    @Autowired
     private SupplierService service;
 
-    @PostMapping
-    public ResponseUtil saveAdmin(@ModelAttribute SupplierDTO dto){
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveSupplier(@RequestBody SupplierDTO dto){
+        System.out.println("calling post mapping...."+dto);
         service.addSupplier(dto);
         return new ResponseUtil(200, dto.getNic()+ " Successfully Added...",null);
     }
@@ -37,13 +40,14 @@ public class SupplierController {
 
 
     @DeleteMapping(params = "id")
-    public ResponseUtil deleteSupplier(String nic) {
-        service.deleteSupplier(nic);
-        return new ResponseUtil(200, nic + " Successfully deleted...!", null);
+    public ResponseUtil deleteSupplier(Long id) {
+        service.deleteSupplier(id);
+        return new ResponseUtil(200, id + " Successfully deleted...!", null);
     }
 
     @PutMapping
     public ResponseUtil updateAdmin(@RequestBody SupplierDTO dto) {
+        System.out.println("update supplier "+dto);
         service.updateSupplier(dto);
         return new ResponseUtil(200, dto.getNic() + " Successfully updated..", null);
     }

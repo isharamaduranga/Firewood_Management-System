@@ -38,4 +38,6 @@ public class Supplier {
     double distance;
     String contact;
     String status;
+
+
 }
