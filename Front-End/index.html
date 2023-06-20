@@ -25,8 +25,8 @@
     <h1 class="text-white text-center pt-5 mb-5">Fire Wood Management System</h1>
     <div class="container shadow col-md-3   ps-3  pe-3  rounded-5" id="login_page" style="padding: 5px">
 
-        <!-- Pills navs -->
-        <h6 class="text-center pt-5"><i class="fa-sharp fa-solid fa-circle-user fa-3x text-info"></i></h6>
+
+        <h6 class="text-center pt-5"><img class="login_logo" src="assets/images/MAS_logo.png"></h6>
         <h2 class=" text-center"> LOGIN </h2>
         <hr class="text-white mb-5">
         <!-- Pills navs -->
@@ -49,8 +49,9 @@
                     </div>
                     <pre><small class="mb-5"></small></pre>
 
+                    <br>
                     <!-- Submit button -->
-                    <button class="btn btn-primary btn-block  mb-4" id="submit_btn" type="button">Sign in</button>
+                    <button class="btn btn-primary btn-block  mb-5" id="submit_btn" type="button">Sign in</button>
 
                 </form>
             </div>
@@ -112,7 +113,7 @@
 <section id="nav_bar">
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./assets/logo/demo-logo.png"></a>
+            <a class="navbar-brand" href="#v-pills-tab"><img class="nav_logo " src="./assets/images/MAS_preview.png"></a>
             <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler"
                     data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
@@ -137,9 +138,9 @@
              role="tablist">
             <div>
                 <h5 class="text-center">Admin Profile</h5>
-                <h6 class="text-center mt-2"><i class="fa-sharp fa-solid fa-circle-user fa-5x text-secondary"></i></h6>
+                <h6 class="text-center mt-2"><i class="fa-sharp fa-solid fa-circle-user fa-4x text-secondary"></i></h6>
 
-                <small><p class="text-center">Sheron Fernando</p></small>
+                 <img class="text-center w-100 h-50" src="./assets/images/MAS_preview.png">
             </div>
             <hr>
             <br>
@@ -188,7 +189,7 @@
                                  style="max-width: 18rem;">
                                 <div class="card-header text-center">Total Suppliers</div>
                                 <div class="card-body">
-                                    <h2 class="card-title text-center">50</h2>
+                                    <h2 id="supplierCount" class="card-title text-center"></h2>
                                 </div>
                             </div>
 
@@ -200,7 +201,7 @@
                                  style="max-width: 18rem;">
                                 <div class="card-header text-center">Active Suppliers</div>
                                 <div class="card-body">
-                                    <h2 class="card-title text-center">30</h2>
+                                    <h2 id="activeCount"class="card-title text-center"></h2>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +212,7 @@
                                  style="max-width: 18rem;">
                                 <div class="card-header text-center">Inactive Suppliers</div>
                                 <div class="card-body">
-                                    <h2 class="card-title text-center">20</h2>
+                                    <h2 id="inActiveCount"class="card-title text-center">20</h2>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +222,7 @@
                                  style="max-width: 18rem;">
                                 <div class="card-header text-center">Users</div>
                                 <div class="card-body">
-                                    <h2 class="card-title text-white text-center">10</h2>
+                                    <h2 id="userCount"class="card-title text-white text-center">10</h2>
                                 </div>
                             </div>
                         </div>
@@ -245,7 +246,7 @@
 
                 <div class="container pt-2">
                     <div class="row">
-                        <div class="col-md vertical-center border border-1 border-info bg-light rounded-4 mt-2 ms-2 shadow">
+                        <div class="col-md-5 vertical-center border border-1 border-info bg-light rounded-4 mt-2 ms-2 shadow">
                             <form id="adminForm">
                                 <h6 class="text-center mt-5"><i
                                         class="fa-sharp fa-solid fa-circle-user fa-3x text-info"></i></h6>
@@ -290,10 +291,11 @@
 
                             </form>
                         </div>
-                        <div class="col-md mt-2" id="container_admin_table">
+                        <div class="col-md-7  mt-2" id="container_admin_table">
                             <table class="table table-striped table-bordered table-hover  ">
                                 <thead class="bg-info text-white">
                                 <tr>
+                                    <th>No</th>
                                     <th>Admin Id</th>
                                     <th>Admin Name</th>
                                     <th>Admin Password</th>
@@ -308,8 +310,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <div aria-labelledby="v-pills-suppliers-tab" class="tab-pane fade" id="v-pills-suppliers" role="tabpanel"
                  tabindex="0">
@@ -343,7 +343,7 @@
                            <div class="mb-3 col-3">
                                <label class="form-label" for="woodType"><span class="text-danger fw-bold">*</span>Wood Type</label><br>
                                <select aria-label="Default select example" class="form-select"
-                                       id="woodType" name="woodType">
+                                       id="woodType" >
                                    <option selected value="None">None</option>
                                    <option value="Rubber">Rubber</option>
                                    <option value="Gliricidia">Gliricidia</option>
@@ -374,10 +374,10 @@
                                <span class="control-error" id="lblSupplierContact"></span>
                            </div>
 
+
                            <div class="mb-3 col-3">
                                <label class="form-label" for="status"><span class="text-danger fw-bold">*</span>Status</label><br>
-                               <select aria-label="Default select example" class="form-select"
-                                       name="status"   id="status">
+                               <select class="form-select" aria-label="Default select example" id="status">
                                    <option selected value="None">None</option>
                                    <option value="Active">Active</option>
                                    <option value="Inactive">Inactive</option>
@@ -390,7 +390,7 @@
                            <button class="btn btn-info" id="updateSupplierBtn" type="button">Update</button>
                            <button class="btn btn-danger" id="deleteSupplierBtn" type="button">Delete</button>
                            <button class="btn btn-warning" id="clearSupplierBtn" type="button">Clear</button>
-                           <button class="btn btn-success " id="exportExcelShhet" type="button">Export To Excel</button>
+                           <button class="btn btn-success " id="exportExcelSheet" type="button">Export To Excel</button>
                            <label id="longId" class="text-danger" style="display: none"></label>
 
                        </div>
@@ -429,6 +429,7 @@
             <div aria-labelledby="v-pills-active-tab" class="tab-pane fade" id="v-pills-suppliers_active"
                  role="tabpanel" tabindex="0">
                 <h1 class="text-center text-white ">Active Suppliers</h1>
+                <button class="btn btn-success ms-4" id="exportExcelSheet_Active_Supplier" type="button">Export To Excel</button>
                 <div class="container m-3" id="container_Supplier_Active_table">
                     <table id="supplierActiveTbl" class="table table-striped  table-hover">
                         <thead class="bg-info text-white">
@@ -457,6 +458,7 @@
             <div aria-labelledby="v-pills-inactive-tab" class="tab-pane fade" id="v-pills-suppliers_inactive"
                  role="tabpanel" tabindex="0">
                 <h1 class="text-center text-white ">Inactive Suppliers</h1>
+                <button class="btn btn-success ms-4" id="exportExcelSheet_Inactivate_Supplier" type="button">Export To Excel</button>
                 <div class="container m-3" id="container_Supplier_Inactive_table">
                     <table id="supplierInactiveTbl" class="table table-striped  table-hover">
                         <thead class="bg-info text-white">
@@ -505,6 +507,7 @@
 
 <script src="./controllers/NavigationController.js"></script>
 <script src="./styles/style.js"></script>
+<script src="./assets/sheetjs-github/dist/xlsx.full.min.js"></script>
 <script src="./controllers/UserLoginController.js"></script>
 <script src="./controllers/AdminCrudController.js"></script>
 <script src="./controllers/SupplierController.js"></script>

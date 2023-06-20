@@ -212,8 +212,9 @@ $("#getAllBtn").click(function () {
     clearTextFields();
 });
 
-function loadAllAdmins() {
 
+function loadAllAdmins() {
+    var countAdmin = 0;
     $("#adminTable").empty();
     $.ajax({
         url: baseURLAdminCrud + "admin",
@@ -222,15 +223,18 @@ function loadAllAdmins() {
         success: function (resp) {
             console.log(resp.data);
             for (let ad of resp.data) {
-                $("#adminTable").append("<tr><td>" + ad.id + "</td> <td>" + ad.name + "</td> <td>" + ad.password + "</td> <td>" + ad.contact + "</td></tr>");
+                $("#adminTable").append("<tr><td>" + (++countAdmin)+ "</td><td>" + ad.id + "</td> <td>" + ad.name + "</td> <td>" + ad.password + "</td> <td>" + ad.contact + "</td></tr>");
             }
             setData_Bind_Row_Events();
             clearTextFields()
             $("#adminId").focus();
+            $("#userCount").text(countAdmin)
 
         }
+
     });
 }
+$("#userCount").text(adminCount);
 
 
 $("#deleteBtn").click(function () {

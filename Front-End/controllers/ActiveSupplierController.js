@@ -29,6 +29,21 @@ function loadAllActiveSuppliers() {
                     "</td><td>" + ad.status +
                     "</td></tr>");
             }
+
+            $("#activeCount").text(count)
         }
     });
 }
+
+$("#exportExcelSheet_Active_Supplier").click(function () {
+
+    function exportToExcel(tableId, filename) {
+        const table = document.getElementById(tableId);
+        const ws = XLSX.utils.table_to_sheet(table);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+        XLSX.writeFile(wb, filename + '.xlsx');
+    }
+    exportToExcel("supplierActiveTbl", "Active_Suppliers");
+
+});

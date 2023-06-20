@@ -21,6 +21,11 @@ body{
     background: rgb(255, 255, 255);
 }
 
+.login_logo{
+    width: 60px;
+    height: 60px;
+}
+
 
 #nav_bar {
     position: sticky;
@@ -37,14 +42,12 @@ body{
     background-image: linear-gradient(to right, #636e72, #000000);
 }
 
-.navbar-brand img {
+.nav_logo {
     height: 40px;
-    padding-left: 20px;
+    width: 200px;
 }
 
-.navbar-nav li {
-    padding: 0 20px;
-}
+
 
 .navbar-nav li a {
     color: #fff !important;
@@ -89,6 +92,7 @@ body{
     background-color: rgb(255, 255, 255);
     padding: 30px;
     height: 87vh;
+    width: 47vw;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #ccc;
     overflow-y: scroll;
@@ -139,7 +143,7 @@ thead {
 
 #container_Supplier_Active_table , #container_Supplier_Inactive_table{
    color: rgba(255, 255, 255, 0);
-    height: 80vh;
+    height: 75vh;
     width: 81vw;
     overflow-y: scroll;
     overflow-x: scroll;

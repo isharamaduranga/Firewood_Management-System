@@ -8,6 +8,7 @@ var areaRegEx = /^[0-9A-Z a-z,/:]{4,50}$/;
 var distanceRegExx = /^[0-9]{1,5}$/;
 var contactRegEx = /^(071|077|075|078|076)[0-9]{7}$/;
 
+
 $("#supplierName").keyup(function (event) {
     let supplierName = $("#supplierName").val();
     if (supplierNameRegEx.test(supplierName)) {
@@ -49,7 +50,6 @@ $("#createDate").keyup(function (event) {
         $("#lblCreateDate").text("Check this field whether correct !");
     }
 });
-
 
 
 $("#supplierArea").keyup(function (event) {
@@ -116,9 +116,7 @@ $("#addSupplierBtn").click(function () {
             $("#lblSupplierArea").text()!="" || $("#lblSupplierDistance").text()!="" || $("#lblSupplierContact").text()!=""){
             alert("Check Input Fields Whether Correct !");
         }else{
-
             saveSupplier();
-
         }
     }
 });
@@ -146,6 +144,7 @@ function saveSupplier() {
         success: function (resp) {
             alert(resp.message);
             loadAllSupliers();
+            clearTextFields();
             loadAllInactiveSuppliers();
             loadAllActiveSuppliers();
         },
@@ -162,30 +161,26 @@ function setData_Bind_Row_Eventss() {
         let name = $(this).children(":eq(1)").text();
         let nic = $(this).children(":eq(2)").text();
         let date = $(this).children(":eq(3)").text();
-        let woodType = $(this).children(":eq(4)").text();
         let area = $(this).children(":eq(5)").text();
         let distance = $(this).children(":eq(6)").text();
         let contact = $(this).children(":eq(7)").text();
-        let status = $(this).children(":eq(8)").text();
         let longId = $(this).children(":eq(9)").text();
-
-        console.log(longId);
-
-
+        let woodType = $(this).children(":eq(4)").text();
+        let status = $(this).children(":eq(8)").text();
 
 
+       /* alert(woodType +" " + status);*/
 
         /** setting table details values to text fields */
         $('#supplierName').val(name);
         $('#supplierNic').val(nic);
         /*** find case */
         $('#createDate').val(date);
-
-        $('#woodType option:selected').text(woodType);
+        $("#woodType").val(woodType);
         $('#supplierArea').val(area);
         $('#supplierDistance').val(distance);
         $('#supplierContact').val(contact);
-        $('#status option:selected').text(status);
+        $("#status").val(status);
         $('#longId').text(longId)
     });
 }
@@ -221,7 +216,7 @@ function loadAllSupliers() {
                     "</td></tr>");
             }
             setData_Bind_Row_Eventss();
-            clearTextFields();
+            $("#supplierCount").text(count);
         }
     });
 }
@@ -249,6 +244,9 @@ $("#updateSupplierBtn").click(function () {
         success: function (resp) {
             alert(resp.message);
             loadAllSupliers();
+            loadAllInactiveSuppliers();
+            loadAllActiveSuppliers();
+            clearTextFields();
         },
         error: function (error) {
             let jsObj = JSON.parse(error.responseText);
@@ -267,6 +265,9 @@ $("#deleteSupplierBtn").click(function () {
         success: function (resp) {
             alert(resp.message);
             loadAllSupliers();
+            loadAllInactiveSuppliers();
+            loadAllActiveSuppliers();
+            clearTextFields();
         },
         error: function (error) {
             let jsObj = JSON.parse(error.responseText);
@@ -277,16 +278,29 @@ $("#deleteSupplierBtn").click(function () {
 
 
 $("#clearSupplierBtn").click(function () {
-    clearTextFields()
+    clearTextFields();
 });
 
 function clearTextFields() {
     $('#supplierName').val("");
     $('#supplierNic').val("");
     $('#createDate').val("");
-    $('#woodType option:selected').text("None");
     $('#supplierArea').val("");
     $('#supplierDistance').val("");
     $('#supplierContact').val("");
-    $('#status option:selected').text("None");
+    $('#status').val("None");
+    $('#woodType').val("None");
 }
+
+
+/** Export Excel Sheet of All Supplier Details ... */
+$("#exportExcelSheet").click(function () {
+    function exportToExcel(tableId, filename) {
+        const table = document.getElementById(tableId);
+        const ws = XLSX.utils.table_to_sheet(table);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+        XLSX.writeFile(wb, filename + '.xlsx');
+    }
+    exportToExcel("supplierTbl", "Supplier_Data");
+});

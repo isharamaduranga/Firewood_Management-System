@@ -29,6 +29,20 @@ function loadAllInactiveSuppliers() {
                     "</td><td>" + ad.status +
                     "</td></tr>");
             }
+            $("#inActiveCount").text(count)
         }
     });
 }
+
+$("#exportExcelSheet_Inactivate_Supplier").click(function () {
+
+    function exportToExcel(tableId, filename) {
+        const table = document.getElementById(tableId);
+        const ws = XLSX.utils.table_to_sheet(table);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+        XLSX.writeFile(wb, filename + '.xlsx');
+    }
+    exportToExcel("supplierInactiveTbl", "Inactive_Suppliers");
+
+});
